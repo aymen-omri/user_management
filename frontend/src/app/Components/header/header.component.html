@@ -1,4 +1,7 @@
 <mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()" class="menu-button" *ngIf="isLoggedIn">
+    <mat-icon>menu</mat-icon>
+  </button>
   <span routerLink="/home" style="cursor: pointer;">
     <mat-icon>person</mat-icon>
     Users</span>
@@ -6,13 +9,27 @@
   <button mat-icon-button routerLink="/home">
     <mat-icon>home</mat-icon>
   </button>
-  <button mat-button *ngIf="isLoggedIn" [routerLink]="['/users_list']">
-    Users list
-  </button>
-  <button mat-raised-button *ngIf="isLoggedIn" (click)="logout()">
-    Logout
-  </button>
   <button mat-raised-button *ngIf="!isLoggedIn" [routerLink]="['/login']">
     Login
   </button>
 </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side"  style="width: 200px;background-color : rgb(176, 192, 197); font-weight:600;">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/users_list">
+        <mat-icon>person</mat-icon>
+        User management
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item style="text-align: center;">
+        <button mat-raised-button (click)="logout()">Logout</button>
+      </a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="height: 100vh;background-color:rgb(224, 223, 240);">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

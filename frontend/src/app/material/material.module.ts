@@ -9,7 +9,9 @@ import{MatDialogModule} from '@angular/material/dialog' ;
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import{MatListModule} from '@angular/material/list';
+import{MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -24,7 +26,10 @@ import {MatSelectModule} from '@angular/material/select';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule
   ],
   exports:[
     MatToolbarModule,
@@ -34,7 +39,10 @@ import {MatSelectModule} from '@angular/material/select';
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule
   ]
 })
 export class MaterialModule { }

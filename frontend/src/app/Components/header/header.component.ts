@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class HeaderComponent implements OnInit {
   }
   constructor(private authService: AuthService) { }
   isLoggedIn: boolean | undefined;
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+
 
   verifLoggedIn() {
     if (this.authService.isLoggedIn()) {

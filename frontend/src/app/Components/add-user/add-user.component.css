@@ -1,0 +1,39 @@
+.example-full-width{
+    width: 100%;
+}
+
+form{
+    max-width: 600px;
+    /*margin:20px auto;*/
+    background-color: white;
+    padding: 17px;
+    border-radius: 15px;
+}
+
+h1{
+    text-align: center;
+}
+
+.buttons{
+    margin: 15px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+
+.buttons button{
+    margin-left: 5px;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert{
+    text-align: center;
+}

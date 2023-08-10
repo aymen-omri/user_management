@@ -1,0 +1,30 @@
+<mat-dialog-content class="user-dialog-content">
+  <div class="user-info">
+    <img [src]="'http://localhost:3000/'+data.user.photo_path" alt="User Photo" class="rounded-image">
+    <div class="user-details">
+      <div class="detail-row">
+        <div class="detail-label">Username:</div>
+        <div class="detail-value">{{ data.user.username }}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Display Name:</div>
+        <div class="detail-value">{{ data.user.display_name }}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Role:</div>
+        <div class="detail-value">{{ data.user.role_u }}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Designation:</div>
+        <div class="detail-value">{{ data.user.designation }}</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Email:</div>
+        <div class="detail-value">{{ data.user.email }}</div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>

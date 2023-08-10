@@ -1,0 +1,68 @@
+<div class="container">
+  <form [formGroup]="myFormGroup" class="mat-elevation-z6">
+    <h1>Add new user here</h1>
+    <div class="alert alert-danger" *ngIf="errMessage">
+      {{ errMessage }}
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="username" placeholder="Ex. Aymen123">
+          <mat-error *ngIf="!myFormGroup.valid">
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="pwd" placeholder="Ex. xxxxx">
+          <mat-error *ngIf="!myFormGroup.valid">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Ex. Aymen@gmail.com">
+          <mat-error *ngIf="!myFormGroup.valid">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label>Display name</mat-label>
+          <input type="text" matInput formControlName="display_name" placeholder="Ex. Aymen">
+          <mat-error *ngIf="!myFormGroup.valid">
+            Display name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Designation</mat-label>
+          <input type="text" matInput formControlName="designation" placeholder="xxx...">
+          <mat-error *ngIf="!myFormGroup.valid">
+            Designation is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role_u">
+            <mat-option *ngFor="let role of roles" [value]="role">
+              {{ role }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <label for="formFile" class="form-label">Add picture</label>
+    <input class="form-control" (change)="onFilesSelected($event)" type="file" id="formFile">
+
+    <div class="buttons">
+      <button mat-raised-button color="primary" (click)="saveUser()">
+        Save
+      </button>
+      <button mat-raised-button color="warn" routerLink="/users_list">
+        cancel
+      </button>
+    </div>
+  </form>
+</div>

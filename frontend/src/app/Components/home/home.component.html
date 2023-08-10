@@ -1,0 +1,11 @@
+<div class="full-screen-video-container">
+  <video autoplay loop [muted]="true">
+    <source src="../../../assets/home_video.mp4" type="video/mp4" />
+  </video>
+  <div class="full-screen-video-content">
+    <h1> Users management</h1>
+    <p>Provide guidance on overseeing, administering, and acquiring users data!</p>
+    <button mat-raised-button color="primary" [routerLink]="['/login']" *ngIf="!isLoggedIn">Start here!</button>
+    <button mat-raised-button color="primary" [routerLink]="['/users_list']" *ngIf="isLoggedIn">Users List</button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span routerLink="/home" style="cursor: pointer;">
+    <mat-icon>person</mat-icon>
+    Users</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button routerLink="/home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-button *ngIf="isLoggedIn" [routerLink]="['/users_list']">
+    Users list
+  </button>
+  <button mat-raised-button *ngIf="isLoggedIn" (click)="logout()">
+    Logout
+  </button>
+  <button mat-raised-button *ngIf="!isLoggedIn" [routerLink]="['/login']">
+    Login
+  </button>
+</mat-toolbar>

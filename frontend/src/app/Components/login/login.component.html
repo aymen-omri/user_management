@@ -1,0 +1,29 @@
+<div class="center">
+  <form [formGroup]="myFormGroup" (ngSubmit)="loginUser()" class="example-form mat-elevation-z6">
+    <h1>Login</h1>
+    <mat-dialog-content class="my-custom-dialog">
+      <div class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <!--Username field-->
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput formControlName="username" placeholder="Ex. Aymen123">
+        <mat-error *ngIf="!myFormGroup.valid">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <!--Password field-->
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="pwd">
+        <mat-error *ngIf="!myFormGroup.valid">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-raised-button color="accent">Login</button>
+    </mat-dialog-actions>
+  </form>
+</div>
